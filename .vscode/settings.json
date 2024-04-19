@@ -1,7 +1,7 @@
 {
-  "C_Cpp_Runner.cCompilerPath": "/Users/hanzo/Toolchain/arm-none-eabi/bin/arm-none-eabi-gcc",
-  "C_Cpp_Runner.cppCompilerPath": "/Users/hanzo/Toolchain/arm-none-eabi/bin/arm-none-eabi-g++",
-  "C_Cpp_Runner.debuggerPath": "/Users/hanzo/Toolchain/arm-none-eabi/bin/arm-none-eabi-gdb",
+  "C_Cpp_Runner.cCompilerPath": "/usr/bin/arm-none-eabi-gcc",
+  "C_Cpp_Runner.cppCompilerPath": "/usr/bin/arm-none-eabi-g++",
+  "C_Cpp_Runner.debuggerPath": "/usr/bin/arm-none-eabi-gdb",
   "C_Cpp_Runner.cStandard": "",
   "C_Cpp_Runner.cppStandard": "",
   "C_Cpp_Runner.msvcBatchPath": "",
