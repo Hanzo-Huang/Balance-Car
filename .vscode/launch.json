@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Cortex Debug",
+      "cwd": "${workspaceRoot}",
+      "executable": "./build/${workspaceFolderBasename}.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "device": "STM32f407",
+      "configFiles": [
+        "/Users/hanzo/Toolchain/xpack-openocd/openocd/scripts/interface/cmsis-dap.cfg",
+        "/Users/hanzo/Toolchain/xpack-openocd/openocd/scripts/target/stm32f1x.cfg"
+      ],
+      "interface": "swd",
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 4
+      },
+      "searchDir": [],
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "none",
+      "preLaunchTask": "Build"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/hanzo/Desktop/STM32F103C8T6/STM32F103C8T6/Core/Src",
+      "program": "/Users/hanzo/Desktop/STM32F103C8T6/STM32F103C8T6/Core/Src/build/Debug/outDebug"
+    }
+  ]
+}
