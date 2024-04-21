@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccM1Jfxj.s 			page 1
+ARM GAS  /tmp/ccxf4iGk.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
   30:Core/Src/usart.c **** /* USART1 init function */
   31:Core/Src/usart.c **** 
   32:Core/Src/usart.c **** void MX_USART1_UART_Init(void)
-ARM GAS  /tmp/ccM1Jfxj.s 			page 2
+ARM GAS  /tmp/ccxf4iGk.s 			page 2
 
 
   33:Core/Src/usart.c **** {
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
   64 001c C361     		str	r3, [r0, #28]
   50:Core/Src/usart.c ****   if (HAL_UART_Init(&huart1) != HAL_OK)
   65              		.loc 1 50 3 is_stmt 1 view .LVU17
-ARM GAS  /tmp/ccM1Jfxj.s 			page 3
+ARM GAS  /tmp/ccxf4iGk.s 			page 3
 
 
   66              		.loc 1 50 7 is_stmt 0 view .LVU18
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
   66:Core/Src/usart.c ****   /* USER CODE END USART3_Init 0 */
   67:Core/Src/usart.c **** 
   68:Core/Src/usart.c ****   /* USER CODE BEGIN USART3_Init 1 */
-ARM GAS  /tmp/ccM1Jfxj.s 			page 4
+ARM GAS  /tmp/ccxf4iGk.s 			page 4
 
 
   69:Core/Src/usart.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
   87:Core/Src/usart.c **** }
  142              		.loc 1 87 1 view .LVU43
  143 0024 08BD     		pop	{r3, pc}
-ARM GAS  /tmp/ccM1Jfxj.s 			page 5
+ARM GAS  /tmp/ccxf4iGk.s 			page 5
 
 
  144              	.L10:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  193 0012 9342     		cmp	r3, r2
  194 0014 04D0     		beq	.L17
   94:Core/Src/usart.c ****   {
-ARM GAS  /tmp/ccM1Jfxj.s 			page 6
+ARM GAS  /tmp/ccxf4iGk.s 			page 6
 
 
   95:Core/Src/usart.c ****   /* USER CODE BEGIN USART1_MspInit 0 */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  142:Core/Src/usart.c **** 
  143:Core/Src/usart.c ****   /* USER CODE BEGIN USART3_MspInit 1 */
  144:Core/Src/usart.c **** 
-ARM GAS  /tmp/ccM1Jfxj.s 			page 7
+ARM GAS  /tmp/ccxf4iGk.s 			page 7
 
 
  145:Core/Src/usart.c ****   /* USER CODE END USART3_MspInit 1 */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  242              	.LBE3:
  101:Core/Src/usart.c ****     /**USART1 GPIO Configuration
  243              		.loc 1 101 5 view .LVU67
-ARM GAS  /tmp/ccM1Jfxj.s 			page 8
+ARM GAS  /tmp/ccxf4iGk.s 			page 8
 
 
  106:Core/Src/usart.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  126:Core/Src/usart.c **** 
  283              		.loc 1 126 5 view .LVU83
  284              	.LBB4:
-ARM GAS  /tmp/ccM1Jfxj.s 			page 9
+ARM GAS  /tmp/ccxf4iGk.s 			page 9
 
 
  126:Core/Src/usart.c **** 
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  135:Core/Src/usart.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
  323              		.loc 1 135 27 is_stmt 0 view .LVU100
  324 00a4 0323     		movs	r3, #3
-ARM GAS  /tmp/ccM1Jfxj.s 			page 10
+ARM GAS  /tmp/ccxf4iGk.s 			page 10
 
 
  325 00a6 0793     		str	r3, [sp, #28]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  372              	.LFB68:
  148:Core/Src/usart.c **** 
  149:Core/Src/usart.c **** void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
-ARM GAS  /tmp/ccM1Jfxj.s 			page 11
+ARM GAS  /tmp/ccxf4iGk.s 			page 11
 
 
  150:Core/Src/usart.c **** {
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  180:Core/Src/usart.c ****     PB11     ------> USART3_RX
  181:Core/Src/usart.c ****     */
  182:Core/Src/usart.c ****     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_10|GPIO_PIN_11);
-ARM GAS  /tmp/ccM1Jfxj.s 			page 12
+ARM GAS  /tmp/ccxf4iGk.s 			page 12
 
 
  183:Core/Src/usart.c **** 
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  440              		.global	huart3
  441              		.section	.bss.huart3,"aw",%nobits
  442              		.align	2
-ARM GAS  /tmp/ccM1Jfxj.s 			page 13
+ARM GAS  /tmp/ccxf4iGk.s 			page 13
 
 
  445              	huart3:
@@ -746,27 +746,27 @@ ARM GAS  /tmp/ccM1Jfxj.s 			page 1
  461              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
  462              		.file 8 "Core/Inc/usart.h"
  463              		.file 9 "Core/Inc/main.h"
-ARM GAS  /tmp/ccM1Jfxj.s 			page 14
+ARM GAS  /tmp/ccxf4iGk.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usart.c
-     /tmp/ccM1Jfxj.s:19     .text.MX_USART1_UART_Init:0000000000000000 $t
-     /tmp/ccM1Jfxj.s:25     .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
-     /tmp/ccM1Jfxj.s:83     .text.MX_USART1_UART_Init:000000000000002c $d
-     /tmp/ccM1Jfxj.s:452    .bss.huart1:0000000000000000 huart1
-     /tmp/ccM1Jfxj.s:89     .text.MX_USART3_UART_Init:0000000000000000 $t
-     /tmp/ccM1Jfxj.s:95     .text.MX_USART3_UART_Init:0000000000000000 MX_USART3_UART_Init
-     /tmp/ccM1Jfxj.s:153    .text.MX_USART3_UART_Init:000000000000002c $d
-     /tmp/ccM1Jfxj.s:445    .bss.huart3:0000000000000000 huart3
-     /tmp/ccM1Jfxj.s:159    .text.HAL_UART_MspInit:0000000000000000 $t
-     /tmp/ccM1Jfxj.s:165    .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
-     /tmp/ccM1Jfxj.s:355    .text.HAL_UART_MspInit:00000000000000c8 $d
-     /tmp/ccM1Jfxj.s:364    .text.HAL_UART_MspDeInit:0000000000000000 $t
-     /tmp/ccM1Jfxj.s:370    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
-     /tmp/ccM1Jfxj.s:433    .text.HAL_UART_MspDeInit:0000000000000044 $d
-     /tmp/ccM1Jfxj.s:442    .bss.huart3:0000000000000000 $d
-     /tmp/ccM1Jfxj.s:449    .bss.huart1:0000000000000000 $d
+     /tmp/ccxf4iGk.s:19     .text.MX_USART1_UART_Init:0000000000000000 $t
+     /tmp/ccxf4iGk.s:25     .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
+     /tmp/ccxf4iGk.s:83     .text.MX_USART1_UART_Init:000000000000002c $d
+     /tmp/ccxf4iGk.s:452    .bss.huart1:0000000000000000 huart1
+     /tmp/ccxf4iGk.s:89     .text.MX_USART3_UART_Init:0000000000000000 $t
+     /tmp/ccxf4iGk.s:95     .text.MX_USART3_UART_Init:0000000000000000 MX_USART3_UART_Init
+     /tmp/ccxf4iGk.s:153    .text.MX_USART3_UART_Init:000000000000002c $d
+     /tmp/ccxf4iGk.s:445    .bss.huart3:0000000000000000 huart3
+     /tmp/ccxf4iGk.s:159    .text.HAL_UART_MspInit:0000000000000000 $t
+     /tmp/ccxf4iGk.s:165    .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
+     /tmp/ccxf4iGk.s:355    .text.HAL_UART_MspInit:00000000000000c8 $d
+     /tmp/ccxf4iGk.s:364    .text.HAL_UART_MspDeInit:0000000000000000 $t
+     /tmp/ccxf4iGk.s:370    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
+     /tmp/ccxf4iGk.s:433    .text.HAL_UART_MspDeInit:0000000000000044 $d
+     /tmp/ccxf4iGk.s:442    .bss.huart3:0000000000000000 $d
+     /tmp/ccxf4iGk.s:449    .bss.huart1:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init

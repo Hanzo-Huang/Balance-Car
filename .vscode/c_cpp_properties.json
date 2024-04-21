@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "macos-gcc-arm64",
+      "name": "linux-gcc-arm64",
       "includePath": [
         "${workspaceFolder}/**"
       ],
@@ -22,7 +22,7 @@
       "configurationProvider": "ms-vscode.makefile-tools",
       "cStandard": "${default}",
       "cppStandard": "${default}",
-      "intelliSenseMode": "macos-gcc-arm64"
+      "intelliSenseMode": "linux-gcc-arm64"
     }
   ],
   "version": 4

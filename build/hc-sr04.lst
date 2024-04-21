@@ -1,0 +1,196 @@
+ARM GAS  /tmp/ccXsbJ8W.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"hc-sr04.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "bsp/hc-sr04.c"
+  18              		.global	__aeabi_ui2d
+  19              		.global	__aeabi_dmul
+  20              		.global	__aeabi_d2uiz
+  21              		.section	.text.get_distance,"ax",%progbits
+  22              		.align	1
+  23              		.global	get_distance
+  24              		.syntax unified
+  25              		.thumb
+  26              		.thumb_func
+  28              	get_distance:
+  29              	.LFB65:
+   1:bsp/hc-sr04.c **** #include "hc-sr04.h"
+   2:bsp/hc-sr04.c **** 
+   3:bsp/hc-sr04.c **** extern TIM_HandleTypeDef htim3;
+   4:bsp/hc-sr04.c **** 
+   5:bsp/hc-sr04.c **** uint32_t get_distance()
+   6:bsp/hc-sr04.c **** {
+  30              		.loc 1 6 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 10B5     		push	{r4, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+   7:bsp/hc-sr04.c **** 	// 1. Send a 10us HIGH pulse to the Trigger pin
+   8:bsp/hc-sr04.c **** 	HAL_GPIO_WritePin(Trig_GPIO_Port, Trig_Pin, GPIO_PIN_SET);
+  39              		.loc 1 8 2 view .LVU1
+  40 0002 234C     		ldr	r4, .L6+8
+  41 0004 0122     		movs	r2, #1
+  42 0006 1146     		mov	r1, r2
+  43 0008 2046     		mov	r0, r4
+  44 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  45              	.LVL0:
+   9:bsp/hc-sr04.c **** 	HAL_Delay(1);
+  46              		.loc 1 9 2 view .LVU2
+  47 000e 0120     		movs	r0, #1
+  48 0010 FFF7FEFF 		bl	HAL_Delay
+  49              	.LVL1:
+ARM GAS  /tmp/ccXsbJ8W.s 			page 2
+
+
+  10:bsp/hc-sr04.c **** 	HAL_GPIO_WritePin(Trig_GPIO_Port, Trig_Pin, GPIO_PIN_RESET);
+  50              		.loc 1 10 2 view .LVU3
+  51 0014 0022     		movs	r2, #0
+  52 0016 0121     		movs	r1, #1
+  53 0018 2046     		mov	r0, r4
+  54 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  55              	.LVL2:
+  11:bsp/hc-sr04.c **** 
+  12:bsp/hc-sr04.c **** 	// 2. Wait for the Echo pin to go HIGH
+  13:bsp/hc-sr04.c **** 	while (HAL_GPIO_ReadPin(Echo_GPIO_Port, Echo_Pin) == GPIO_PIN_RESET)
+  56              		.loc 1 13 2 view .LVU4
+  57              	.L2:
+  58              		.loc 1 13 52 discriminator 1 view .LVU5
+  59              		.loc 1 13 9 is_stmt 0 discriminator 1 view .LVU6
+  60 001e 0221     		movs	r1, #2
+  61 0020 1B48     		ldr	r0, .L6+8
+  62 0022 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+  63              	.LVL3:
+  64              		.loc 1 13 52 discriminator 1 view .LVU7
+  65 0026 0028     		cmp	r0, #0
+  66 0028 F9D0     		beq	.L2
+  14:bsp/hc-sr04.c **** 		;
+  15:bsp/hc-sr04.c **** 	__HAL_TIM_SetCounter(&htim3, 0);
+  67              		.loc 1 15 2 is_stmt 1 view .LVU8
+  68 002a 1A4B     		ldr	r3, .L6+12
+  69 002c 1B68     		ldr	r3, [r3]
+  70 002e 0022     		movs	r2, #0
+  71 0030 5A62     		str	r2, [r3, #36]
+  16:bsp/hc-sr04.c **** 	__HAL_TIM_ENABLE(&htim3);
+  72              		.loc 1 16 2 view .LVU9
+  73 0032 1A68     		ldr	r2, [r3]
+  74 0034 42F00102 		orr	r2, r2, #1
+  75 0038 1A60     		str	r2, [r3]
+  17:bsp/hc-sr04.c **** 	while (HAL_GPIO_ReadPin(Echo_GPIO_Port, Echo_Pin) == GPIO_PIN_SET)
+  76              		.loc 1 17 2 view .LVU10
+  77              	.L3:
+  78              		.loc 1 17 52 discriminator 1 view .LVU11
+  79              		.loc 1 17 9 is_stmt 0 discriminator 1 view .LVU12
+  80 003a 0221     		movs	r1, #2
+  81 003c 1448     		ldr	r0, .L6+8
+  82 003e FFF7FEFF 		bl	HAL_GPIO_ReadPin
+  83              	.LVL4:
+  84              		.loc 1 17 52 discriminator 1 view .LVU13
+  85 0042 0128     		cmp	r0, #1
+  86 0044 F9D0     		beq	.L3
+  18:bsp/hc-sr04.c **** 		;
+  19:bsp/hc-sr04.c **** 	uint32_t duration = __HAL_TIM_GET_COUNTER(&htim3);
+  87              		.loc 1 19 2 is_stmt 1 view .LVU14
+  88              		.loc 1 19 22 is_stmt 0 view .LVU15
+  89 0046 134B     		ldr	r3, .L6+12
+  90 0048 1B68     		ldr	r3, [r3]
+  91              		.loc 1 19 11 view .LVU16
+  92 004a 586A     		ldr	r0, [r3, #36]
+  93              	.LVL5:
+  20:bsp/hc-sr04.c **** 	__HAL_TIM_DISABLE(&htim3);
+  94              		.loc 1 20 2 is_stmt 1 view .LVU17
+  95              		.loc 1 20 2 view .LVU18
+ARM GAS  /tmp/ccXsbJ8W.s 			page 3
+
+
+  96 004c 196A     		ldr	r1, [r3, #32]
+  97 004e 41F21112 		movw	r2, #4369
+  98 0052 1142     		tst	r1, r2
+  99 0054 08D1     		bne	.L4
+ 100              		.loc 1 20 2 discriminator 1 view .LVU19
+ 101 0056 196A     		ldr	r1, [r3, #32]
+ 102 0058 40F24442 		movw	r2, #1092
+ 103 005c 1142     		tst	r1, r2
+ 104 005e 03D1     		bne	.L4
+ 105              		.loc 1 20 2 discriminator 3 view .LVU20
+ 106 0060 1A68     		ldr	r2, [r3]
+ 107 0062 22F00102 		bic	r2, r2, #1
+ 108 0066 1A60     		str	r2, [r3]
+ 109              	.L4:
+ 110              		.loc 1 20 2 discriminator 5 view .LVU21
+  21:bsp/hc-sr04.c **** 
+  22:bsp/hc-sr04.c **** 	return (uint32_t)(duration * 0.034 / 2);
+ 111              		.loc 1 22 2 discriminator 5 view .LVU22
+ 112              		.loc 1 22 29 is_stmt 0 discriminator 5 view .LVU23
+ 113 0068 FFF7FEFF 		bl	__aeabi_ui2d
+ 114              	.LVL6:
+ 115              		.loc 1 22 29 discriminator 5 view .LVU24
+ 116 006c 06A3     		adr	r3, .L6
+ 117 006e D3E90023 		ldrd	r2, [r3]
+ 118 0072 FFF7FEFF 		bl	__aeabi_dmul
+ 119              	.LVL7:
+ 120              		.loc 1 22 37 discriminator 5 view .LVU25
+ 121 0076 0022     		movs	r2, #0
+ 122 0078 074B     		ldr	r3, .L6+16
+ 123 007a FFF7FEFF 		bl	__aeabi_dmul
+ 124              	.LVL8:
+ 125              		.loc 1 22 9 discriminator 5 view .LVU26
+ 126 007e FFF7FEFF 		bl	__aeabi_d2uiz
+ 127              	.LVL9:
+  23:bsp/hc-sr04.c **** }...
+ 128              		.loc 1 23 1 discriminator 5 view .LVU27
+ 129 0082 10BD     		pop	{r4, pc}
+ 130              	.L7:
+ 131 0084 AFF30080 		.align	3
+ 132              	.L6:
+ 133 0088 9CC420B0 		.word	-1340029796
+ 134 008c 7268A13F 		.word	1067542642
+ 135 0090 000C0140 		.word	1073810432
+ 136 0094 00000000 		.word	htim3
+ 137 0098 0000E03F 		.word	1071644672
+ 138              		.cfi_endproc
+ 139              	.LFE65:
+ 141              		.text
+ 142              	.Letext0:
+ 143              		.file 2 "/usr/lib/gcc/arm-none-eabi/12.2.1/include/stdint.h"
+ 144              		.file 3 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 145              		.file 4 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 146              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 147              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 148              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 149              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  /tmp/ccXsbJ8W.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hc-sr04.c
+     /tmp/ccXsbJ8W.s:22     .text.get_distance:0000000000000000 $t
+     /tmp/ccXsbJ8W.s:28     .text.get_distance:0000000000000000 get_distance
+     /tmp/ccXsbJ8W.s:133    .text.get_distance:0000000000000088 $d
+
+UNDEFINED SYMBOLS
+__aeabi_ui2d
+__aeabi_dmul
+__aeabi_d2uiz
+HAL_GPIO_WritePin
+HAL_Delay
+HAL_GPIO_ReadPin
+htim3
